@@ -1,0 +1,12 @@
+<h1>Availabe flights</h1>
+<h3>Below you will see a list of available filghts</h3>
+<h2 *ngIf="selectedFlight">You selected: {{ selectedFlight.from }} to {{ selectedFlight.to }} that takes {{ selectedFlight.duration }}</h2>
+
+<div *ngFor="let flight of flights; let index=index">
+    <app-flight-details [flight]="flight"
+                        (flightDetailsRequested)="flightSelected($event)">
+    </app-flight-details>
+    <br>
+</div>
+
+
